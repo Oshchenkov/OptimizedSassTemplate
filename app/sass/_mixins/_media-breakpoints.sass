@@ -1,0 +1,40 @@
+// $sm:                    576px
+// $md:                    768px
+// $lg:                    992px
+// $xl:                    1200px
+/*==========  Mobile First  ==========*/
+
+@mixin media-breakpoint-up($sm)
+	@media (min-width: $sm) 
+		 @content
+
+@mixin media-breakpoint-up($md)
+	@media (min-width: $md) 
+		 @content
+
+@mixin media-breakpoint-up($lg) 
+	@media (min-width: $lg) 
+		 @content
+
+@mixin media-breakpoint-up($xl)
+	@media (min-width: $xl) 
+		 @content
+
+/*==========  Desktop First  ==========*/
+
+@mixin media-breakpoint-down($sm)
+	@media (max-width: #{$sm - 0.02}) 
+		 @content
+
+@mixin media-breakpoint-down($md)
+	@media (max-width: #{$md - 0.02}) 
+		 @content
+
+@mixin media-breakpoint-down($lg)
+	@media (max-width: #{$lg - 0.02}) 
+		 @content
+
+@mixin media-breakpoint-down($xl)
+	@media (max-width: #{$xl - 0.02}) 
+		 @content
+
