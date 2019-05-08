@@ -10,7 +10,8 @@ var     gulp          = require('gulp'),
 		rename        = require('gulp-rename'),
 		autoprefixer  = require('gulp-autoprefixer'),
 		notify        = require('gulp-notify'),
-		clean         = require('gulp-clean');
+		clean         = require('gulp-clean'),
+		sourceMap     = require('gulp-sourcemaps');
 
 gulp.task('copyToDemo',function(){
 	return gulp.src(['app/**/*','!app/sass/**/*'])
@@ -38,6 +39,9 @@ gulp.task('browser-sync', function() {
 
 gulp.task('styles', function() {
 	return gulp.src('app/sass/**/*.+(scss|sass)')
+	.pipe(sourceMap.init())
+	.pipe(sass().on('error', sass.logError))
+	.pipe(sourceMap.write())
 	.pipe(sass({ outputStyle: 'expanded' }).on("error", notify.onError()))
 	.pipe(autoprefixer(['last 15 versions']))
 	.pipe(rename({ 
@@ -65,7 +69,7 @@ gulp.task('scripts', function() {
 		'app/js/common.js', // Always at the end
 		])
 	.pipe(concat('scripts.min.js'))
-	// .pipe(uglify()) // Mifify js (opt.)
+	.pipe(uglify()) // Mifify js (opt.)
 	.pipe(gulp.dest('app/js'))
 	.pipe(browserSync.reload({ stream: true }))
 });
