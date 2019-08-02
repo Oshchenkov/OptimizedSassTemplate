@@ -47,7 +47,7 @@ gulp.task('styles', function() {
 	.pipe(rename({ 
 		basename: 'style',
 	}))
-	.pipe(gulp.dest('app'))
+    .pipe(gulp.dest('app/css'))
 	.pipe(browserSync.stream())
 });
 gulp.task('stylesMin', function() {
