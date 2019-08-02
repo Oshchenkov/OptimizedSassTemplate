@@ -1,5 +1,5 @@
 # OptimizedSassTemplate
-Optimized SASS template with gulp. WordPress ready
+Optimized SASS template with gulp. Ready for gitHub /doc demo show.
 
 For installing run in main folder "npm install"
 
