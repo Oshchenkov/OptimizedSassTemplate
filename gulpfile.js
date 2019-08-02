@@ -10,7 +10,8 @@ var     gulp          = require('gulp'),
 		rename        = require('gulp-rename'),
 		autoprefixer  = require('gulp-autoprefixer'),
 		notify        = require('gulp-notify'),
-		clean         = require('gulp-clean'),
+        clean         = require('gulp-clean'),
+        babel         = require('gulp-babel'),
 		sourceMap     = require('gulp-sourcemaps');
 
 gulp.task('copyToDemo',function(){
@@ -68,7 +69,10 @@ gulp.task('scripts', function() {
 		//'app/libs/jquery/dist/jquery.min.js',
 		'app/js/common.js', // Always at the end
 		])
-	.pipe(concat('scripts.min.js'))
+    .pipe(concat('scripts.min.js'))
+    .pipe(babel({
+        presets: ['@babel/env']
+    }))
 	.pipe(uglify()) // Mifify js (opt.)
 	.pipe(gulp.dest('app/js'))
 	.pipe(browserSync.reload({ stream: true }))
