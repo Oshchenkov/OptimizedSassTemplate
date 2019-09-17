@@ -1,8 +1,23 @@
 # OptimizedSassTemplate
+
 Optimized SASS template with gulp. Ready for gitHub /doc demo show.
 
-For installing run in main folder "npm install"
+## For installing you need:
 
-For starting gulp run: "gulp"
+Run in terminal(need to have installed npm)
 
-For creating /doc folder for showing result in gitHub, run: "gulp demo".
+```
+npm install
+```
+
+Wait when all install and then run
+
+```
+gulp
+```
+
+If you want to clean and create dist file's in ./doc folder for gitHub, you need to run:
+
+```
+gulp demo
+```
