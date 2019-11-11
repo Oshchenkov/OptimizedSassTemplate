@@ -1,6 +1,6 @@
 # OptimizedSassTemplate
 
-Optimized SASS template with gulp. Ready for gitHub /doc demo show.
+[Optimized SASS template](https://github.com/Oshchenkov/OptimizedSassTemplate) with gulp. Ready for gitHub /doc demo show.
 
 ## For installing you need:
 
